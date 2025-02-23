@@ -6,7 +6,7 @@ from pom.login_page import LoginPage
 from utils.env_data import USERNAME
 from utils.env_data import PASSWORD
 
-# Launch browser once per session
+# Launch browser once per sessions
 @pytest.fixture(scope="session")
 def browser():
     with sync_playwright() as p:

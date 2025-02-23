@@ -1,6 +1,6 @@
 import random
-from UITests.utils.constants import MAX_DEPENDENTS
-from UITests.utils.constants import MIN_DEPENDENTS
+from utils.constants import MAX_DEPENDENTS
+from utils.constants import MIN_DEPENDENTS
 
 class TestDataGenerator:
     """Class responsible for generating random test data."""

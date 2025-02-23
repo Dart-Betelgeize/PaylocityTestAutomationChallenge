@@ -1,20 +1,23 @@
 {
     "python.testing.pytestArgs": [
         "UITests/e2eTests",
-        "UITests/functionalTests"
+        "UITests/functionalTests",
+        "APITests/tests"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
     "python.analysis.extraPaths": [
-        "UITests"
+        "UITests",
+        "APITests",
+        "utils"
     ],
     "terminal.integrated.env.windows": {
-        "PYTHONPATH": "UITests"
+        "PYTHONPATH": "${workspaceFolder}"
     },
     "terminal.integrated.env.linux": {
-        "PYTHONPATH": "UITests"
+        "PYTHONPATH": "${workspaceFolder}"
     },
     "terminal.integrated.env.osx": {
-        "PYTHONPATH": "UITests"
+        "PYTHONPATH": "${workspaceFolder}"
     }
 }

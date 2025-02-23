@@ -6,16 +6,13 @@ from pom.objects.table_row import TableRow
 class DashboardPage:
     def __init__(self, page: Page):
         self.page = page
-        self.title = self.page.locator("h1.dashboard-title")
+        self.title = self.page.locator('a[class="navbar-brand"]')
         self.table = self.page.locator('//*[@id="employeesTable"]')
         self.table_header = self.table.locator('//thead[@class="thead-dark"]/tr/th')
         self.table_row = self.table.locator("//tbody/tr")
         self.add_employee_button = self.page.locator('//*[@id="add"]')
         self.log_out_link = self.page.locator('a[href="/Prod/Account/LogOut"]')
-        self.footer = self.page.locator('footer[class="footer"]')
-
-    def get_title(self):
-        return self.title.inner_text()
+        self.footer = self.page.locator('footer.border-top.footer.text-muted')
 
     def get_row(self, index: int) -> TableRow:
         # Get a specific row by index
