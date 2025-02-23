@@ -2,8 +2,8 @@ import random
 import pytest
 
 from utils.test_data_generator import TestDataGenerator
-from utils.constants import DASHBOARD_TITLE
-from utils.constants import TABLE_HEADERS
+from UITests.utils.constants import DASHBOARD_TITLE
+from UITests.utils.constants import TABLE_HEADERS
 
 def test_dashboard_page_content(dashboard):
     # Then

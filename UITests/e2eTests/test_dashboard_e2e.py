@@ -2,7 +2,7 @@ import random
 import pytest
 
 from utils.test_data_generator import TestDataGenerator
-from utils.constants import SALARY
+from UITests.utils.constants import SALARY
 
 def test_add_employee(dashboard):
     # Given

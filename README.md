@@ -36,7 +36,6 @@ Contains:
 - Functional UI tests - functionalTest folder
 - Complex E2E scenarios mentioned as User Stories in the Application description - e2eTests folder
 
-Structure:
 Test are structured in the following way:
 - Test layer (e2eTests and functionalTest folders) - contains test description with usage of keywords
 - Keywords layer (Keywords folder) - business description of action which should be done. Contains asserts and relations with POM

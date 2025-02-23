@@ -1,10 +1,20 @@
 {
     "python.testing.pytestArgs": [
-        "."
+        "UITests/e2eTests",
+        "UITests/functionalTests"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
     "python.analysis.extraPaths": [
-        "./UITests"
-    ]
+        "UITests"
+    ],
+    "terminal.integrated.env.windows": {
+        "PYTHONPATH": "UITests"
+    },
+    "terminal.integrated.env.linux": {
+        "PYTHONPATH": "UITests"
+    },
+    "terminal.integrated.env.osx": {
+        "PYTHONPATH": "UITests"
+    }
 }
