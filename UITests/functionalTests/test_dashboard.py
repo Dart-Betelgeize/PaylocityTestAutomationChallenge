@@ -1,7 +1,15 @@
+import random
 import pytest
 
-EXPECTED_URL = "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/Benefits"
+from utils.test_data_generator import TestDataGenerator
+from utils.constants import DASHBOARD_TITLE
+from utils.constants import TABLE_HEADERS
 
-def test_valid_login(logged_in_page):
-    logged_in_page.wait_for_load_state("domcontentloaded")
-    assert logged_in_page.url == EXPECTED_URL
+def test_dashboard_page_content(dashboard):
+    # Then
+    dashboard.check_page_title_is_correct(DASHBOARD_TITLE)
+    dashboard.check_table_exists()
+    dashboard.check_table_headers_are_correct(TABLE_HEADERS)
+    dashboard.check_add_employee_button()
+    dashboard.check_log_out_button_exists()
+    dashboard.check_footer_content_is_correct()

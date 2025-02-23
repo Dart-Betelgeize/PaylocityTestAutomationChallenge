@@ -3,6 +3,8 @@ from playwright.sync_api import sync_playwright
 from keywords.dashboard_keywords import DashboardKeywords
 from pom.dashboard_page import DashboardPage
 from pom.login_page import LoginPage
+from utils.env_data import USERNAME
+from utils.env_data import PASSWORD
 
 # Launch browser once per session
 @pytest.fixture(scope="session")
@@ -25,7 +27,7 @@ def page(browser):
 def logged_in_page(page):
     login_page = LoginPage(page)
     login_page.navigate()
-    login_page.login("TestUser731", "Sspvtn;@I2P|")
+    login_page.login(USERNAME, PASSWORD)
     yield page
 
 @pytest.fixture(scope="function")

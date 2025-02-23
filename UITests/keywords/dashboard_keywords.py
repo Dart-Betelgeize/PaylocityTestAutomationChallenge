@@ -77,3 +77,26 @@ class DashboardKeywords:
     def check_employee_is_deleted_from_dashboard_table(self, id: str):
         table_row = self.dashboard_page.get_table_row_by_id(id)
         assert table_row is None, f"Employee still exists in the table"
+
+    def check_page_title_is_correct(self, expected_title: str):
+        assert self.dashboard_page.get_title() == expected_title, f"Page title is wrong"
+
+    def check_table_exists(self):
+        assert self.dashboard_page.table.is_visible(), f"Table is not visible"
+
+    def check_table_headers_are_correct(self, expected_headers):
+        headers = self.dashboard_page.get_table_header_texts()
+        assert headers == expected_headers, f"Table headers are not correct"
+
+    def check_add_employee_button(self):
+        assert self.dashboard_page.add_employee_button.is_visible(), f"Add Employee button is not visible"
+        assert self.dashboard_page.add_employee_button.inner_text() == "Add Employee" , f"Add Employee button text is wrong"
+
+    def check_log_out_button_exists(self):
+        assert self.dashboard_page.log_out_link.is_visible(), f"Log out button is not visible"
+
+    def check_log_out_button_exists(self):
+        assert self.dashboard_page.log_out_link.is_visible(), f"Log out button is not visible"
+
+    def check_footer_content_is_correct(self):
+        assert self.dashboard_page.footer.inner_text == "© 2025 - Paylocity", f"Footer content is wrong"

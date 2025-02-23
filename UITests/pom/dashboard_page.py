@@ -11,15 +11,11 @@ class DashboardPage:
         self.table_header = self.table.locator('//thead[@class="thead-dark"]/tr/th')
         self.table_row = self.table.locator("//tbody/tr")
         self.add_employee_button = self.page.locator('//*[@id="add"]')
-
-    def navigate(self):
-        self.page.goto(self.dashboard_url)
-
-    def is_displayed(self):
-        return self.page.is_visible("h1.dashboard-title")
+        self.log_out_link = self.page.locator('a[href="/Prod/Account/LogOut"]')
+        self.footer = self.page.locator('footer[class="footer"]')
 
     def get_title(self):
-        return self.page.inner_text("h1.dashboard-title")
+        return self.title.inner_text()
 
     def get_row(self, index: int) -> TableRow:
         # Get a specific row by index

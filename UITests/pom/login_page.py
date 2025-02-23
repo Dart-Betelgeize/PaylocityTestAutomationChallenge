@@ -1,4 +1,5 @@
 from playwright.sync_api import Page
+from utils.env_data import LOGIN_URL
 
 class LoginPage:
     def __init__(self, page: Page):
@@ -8,7 +9,7 @@ class LoginPage:
         self.login_button = "button[type='submit']"
 
     def navigate(self):
-        self.page.goto("https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/Account/Login")
+        self.page.goto(LOGIN_URL)
 
     def login(self, username: str, password: str):
         self.page.fill(self.username_input, username)
